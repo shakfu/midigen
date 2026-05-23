@@ -1,0 +1,22 @@
+[project]
+name = "midigen"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cyllama>=0.2.18",
+    "miditok>=3.0.6.post1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["test"]
+markers = [
+    "slow: tests that load real GGUF models and run inference (skip with -m 'not slow')",
+]
